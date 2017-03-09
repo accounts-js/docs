@@ -4,6 +4,6 @@ Docs for accounts.
 
 ## Getting Started
 
-Install gitbook `npm i -g gitbook-cli`.
+Install dependencies `yarn`.
 
-Run the server `gitbook serve`
+Run the server locally `yarn start`.

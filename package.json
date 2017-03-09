@@ -1,0 +1,9 @@
+{
+  "name": "docs",
+  "scripts": {
+    "start": "gitbook serve"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.0"
+  }
+}
