@@ -2,7 +2,7 @@
 
 [Github](https://github.com/js-accounts/mongo) | [npm](https://www.npmjs.com/package/@accounts/mongo)
 
-*MongoDB adaptor for accounts*
+*MongoDB data store for js-accounts*
 
 ## Install
 
