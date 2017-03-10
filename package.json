@@ -1,9 +1,12 @@
 {
   "name": "docs",
   "scripts": {
-    "start": "gitbook serve"
+    "start": "gitbook serve",
+    "build": "rm -rf _book && gitbook build",
+    "deploy": "yarn run build && gh-pages -d _book"
   },
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "gitbook-cli": "^2.3.0"
   }
 }
