@@ -374,6 +374,42 @@
                                 
                                 <h1 id="mongo">Mongo</h1>
 <p><a href="https://github.com/js-accounts/mongo" target="_blank">Github</a> | <a href="https://www.npmjs.com/package/@accounts/mongo" target="_blank">npm</a></p>
+<p><em>MongoDB data store for js-accounts</em></p>
+<h2 id="install">Install</h2>
+<pre><code>yarn add @accounts/mongo
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> AccountsServer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/server&apos;</span>;
+<span class="hljs-keyword">import</span> MongoDBInterface <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/mongo&apos;</span>;
+
+<span class="hljs-comment">// If you are using mongoose</span>
+mongoose.connect(process.env.MONGO_URL);
+<span class="hljs-keyword">const</span> db = mongoose.connection;
+
+<span class="hljs-comment">// If you are using mongodb</span>
+<span class="hljs-keyword">const</span> db =  <span class="hljs-keyword">await</span> mongodb.MongoClient.connect(process.env.MONGO_URL);
+
+AccountsServer.config({
+}, <span class="hljs-keyword">new</span> MongoDBInterface(db));
+</code></pre>
+<h2 id="options">Options</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Optionnal object to pass to MongoDBInterface</span>
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-comment">// The users collection name, default &apos;users&apos;</span>
+  collectionName: string,
+  <span class="hljs-comment">// The sessions collection name, default &apos;sessions&apos;</span>
+  sessionCollectionName: string,
+  <span class="hljs-comment">// The timestamps for the users and sessions collection, default &apos;createdAt&apos; and &apos;updatedAt&apos;</span>
+  timestamps: {
+    createdAt: string,
+    updatedAt: string,
+  },
+  <span class="hljs-comment">// Should the collection use _id as string or ObjectId, default &apos;true&apos;</span>
+  convertUserIdToMongoObjectId: boolean
+};
+
+AccountsServer.config({
+}, <span class="hljs-keyword">new</span> MongoDBInterface(db, options));
+</code></pre>
 
                                 
                                 </section>
@@ -417,7 +453,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mongo","level":"1.5.1","depth":2,"next":{"title":"Redis","level":"1.5.2","depth":2,"path":"databases/redis.md","ref":"databases/redis.md","articles":[]},"previous":{"title":"Databases","level":"1.5","depth":1,"path":"databases/README.md","ref":"databases/README.md","articles":[{"title":"Mongo","level":"1.5.1","depth":2,"path":"databases/mongo.md","ref":"databases/mongo.md","articles":[]},{"title":"Redis","level":"1.5.2","depth":2,"path":"databases/redis.md","ref":"databases/redis.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"databases/mongo.md","mtime":"2017-03-10T10:08:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-10T11:28:48.129Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mongo","level":"1.5.1","depth":2,"next":{"title":"Redis","level":"1.5.2","depth":2,"path":"databases/redis.md","ref":"databases/redis.md","articles":[]},"previous":{"title":"Databases","level":"1.5","depth":1,"path":"databases/README.md","ref":"databases/README.md","articles":[{"title":"Mongo","level":"1.5.1","depth":2,"path":"databases/mongo.md","ref":"databases/mongo.md","articles":[]},{"title":"Redis","level":"1.5.2","depth":2,"path":"databases/redis.md","ref":"databases/redis.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"databases/mongo.md","mtime":"2017-03-10T21:54:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-10T21:54:22.649Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
