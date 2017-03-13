@@ -12,6 +12,7 @@ yarn add @accounts/meteor-adapter
 
 To use with Meteor client-side, use your `AccountsClient` instance and `Meteor` instance, and use this package on your Meteor's client-side entry point (usually `client/main.js`):
 
+```js
 import { Meteor } from 'meteor/meteor';
 import AccountsClient from '@accounts/client';
 import { wrapMeteorClient } from '@accounts/meteor-adapter';
