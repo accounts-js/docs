@@ -1,6 +1,6 @@
 # Express
 
-*JSAccounts adapter for Expressjs*
+*JSAccounts middleware for ExpressJS*
 
 ## Install
 
@@ -19,7 +19,6 @@ import accountsExpress from '@accounts/rest-express';
 AccountsServer.config({}); // Config your accounts server
 
 // Config express
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(accountsExpress(AccountsServer));
