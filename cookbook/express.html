@@ -373,6 +373,26 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="express">Express</h1>
+<p><em>JSAccounts middleware for ExpressJS</em></p>
+<h2 id="install">Install</h2>
+<pre><code>yarn add @accounts/rest-express
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;express&apos;</span>;
+<span class="hljs-keyword">import</span> bodyParser <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;body-parser&apos;</span>;
+<span class="hljs-keyword">import</span> AccountsServer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/server&apos;</span>;
+<span class="hljs-keyword">import</span> accountsExpress <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/rest-express&apos;</span>;
+
+AccountsServer.config({}); <span class="hljs-comment">// Config your accounts server</span>
+
+<span class="hljs-comment">// Config express</span>
+app.use(bodyParser.json());
+
+app.use(accountsExpress(AccountsServer));
+
+app.listen(process.env.PORT, () =&gt; <span class="hljs-built_in">console</span>.log(
+  <span class="hljs-string">`API Server is now running on http://localhost:<span class="hljs-subst">${process.env.PORT}</span>`</span>,
+));
+</code></pre>
 
                                 
                                 </section>
@@ -416,7 +436,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Express","level":"1.7.1","depth":2,"next":{"title":"Meteor","level":"1.7.2","depth":2,"path":"cookbook/meteor.md","ref":"cookbook/meteor.md","articles":[]},"previous":{"title":"Cookbook","level":"1.7","depth":1,"path":"cookbook/README.md","ref":"cookbook/README.md","articles":[{"title":"Express","level":"1.7.1","depth":2,"path":"cookbook/express.md","ref":"cookbook/express.md","articles":[]},{"title":"Meteor","level":"1.7.2","depth":2,"path":"cookbook/meteor.md","ref":"cookbook/meteor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"cookbook/express.md","mtime":"2017-04-12T14:41:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T14:55:32.536Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Express","level":"1.7.1","depth":2,"next":{"title":"Meteor","level":"1.7.2","depth":2,"path":"cookbook/meteor.md","ref":"cookbook/meteor.md","articles":[]},"previous":{"title":"Cookbook","level":"1.7","depth":1,"path":"cookbook/README.md","ref":"cookbook/README.md","articles":[{"title":"Express","level":"1.7.1","depth":2,"path":"cookbook/express.md","ref":"cookbook/express.md","articles":[]},{"title":"Meteor","level":"1.7.2","depth":2,"path":"cookbook/meteor.md","ref":"cookbook/meteor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"cookbook/express.md","mtime":"2017-04-12T14:56:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T14:56:24.203Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -371,6 +371,29 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="js-accounts">js-accounts</h1>
+<p>The js-accounts organiztion develops and maintains a modular accounts system for the javscript domain.
+The basic idea is to have authentication view, business logic, transport and data storage separated to multiple packages so you can opt in and out of parts of the account system, but the whole suite should allow the user to have a complete, generic and customizable account system.</p>
+<h2 id="prior-art">Prior Art</h2>
+<p>This project is inspired by Meteor&apos;s accounts suite of packages. Meteor framework had a plug and play approach for it&apos;s monolithic framework that saved ton of work that is traditionally done by any development team, over and over again.
+Meteor&apos;s accounts system had a couple of restrictions:</p>
+<ul>
+<li>First it was published in Meteor&apos;s &quot;atmosphere&quot; package repository and was dependant on the Meteor&apos;s build tool.  </li>
+<li>Second, Meteor is built around DDP and so it&apos;s accounts system was taking that as granted.</li>
+<li>Third, Meteor dependancy on MongoDB meant that the buisness logic was dependant on how the data is stored inthe database.</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<p>Going into this project we asked ourselves (and was asked by others) a bunch of questions that helped us define what this project is all about. This is part of these questions:
+If you have a question that you think, could shape this project, please PR this document or open an issue!</p>
+<h3 id="why-wouldnt-you-just-use-passport">Why wouldn&apos;t you just use passport??</h3>
+<p>We are not here to replace passport.js. Actually, in our vision, passport.js will be one authentication method that you can plug in. Currently, the only problem with passport.js in that regard is that it is designed to work with connect middlewares and adapter code is need to plug into let&apos;s say a WS transport. 
+We currently implemented our own local strategy just to make sense out of basic accounts packages. In the close future it will be seperated to it&apos;s own pakcage.</p>
+<h3 id="why-not-refactor-out-the-meteor-accounts-suite">Why not refactor out the meteor accounts suite?</h3>
+<p>Well, as explained above, Meteor&apos;s accounts system is tied to the data storage and transport in a way that is actually harder to separate then rewriting with those abstractions in mind. We do offer an adapter package that allows Meteor applications an easy and gradual way to move out of Meteor&apos;s current accounts system.</p>
+<h3 id="why-do-you-use-flowtype">Why do you use flowtype?</h3>
+<p>This decision was made early on in the project&apos;s life as a way to keep the code in plain javascript and gradually add in typings where it makes sense. TBH, flowtype&apos;s developer experience isn&apos;t great, so if some magical hero comes along and turnes this whole project into typescript we will probably merge that.</p>
+<h3 id="why-do-you-use-multiple-mono-repos">Why do you use multiple mono-repo&apos;s?</h3>
+<p>Early on we understood that a mono-repo is required in order to have good developer experience while adding any accounts logic.
+This also helps us keep code base relatively small for using apps as you will not load in client code on server apps and vice versa. Although having a mono repo is great, we fill that someone maintaining the redis package should not get any notifications regarding changes on the mongo package, or the react packages. If you are adding in a feature that requires changes to the transport or the data store packages, we recommend cloning all of js-accounts packages into the same directory and just open your IDE on that directory as project root.</p>
 
                                 
                                 </section>
@@ -410,7 +433,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Configure","level":"1.2","depth":1,"path":"configure.md","ref":"configure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"README.md","mtime":"2017-03-10T08:19:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T14:55:32.536Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Configure","level":"1.2","depth":1,"path":"configure.md","ref":"configure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"README.md","mtime":"2017-04-12T14:56:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T14:56:24.203Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
