@@ -31,7 +31,7 @@ import bodyParser from 'body-parser';
 import { AccountsServer } from '@accounts/server';
 import accountsExpress from '@accounts/rest-express';
 import { MongoClient } from 'mongodb';
-import MongoAdapter from '@accounts/mongo'
+import MongoAdapter from '@accounts/mongo';
 
 const mongoAdapter = await MongoClient.connect(MONGO_URL).then(db => new MongoAdapter(db));
 
