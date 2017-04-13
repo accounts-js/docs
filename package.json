@@ -2,6 +2,7 @@
   "name": "docs",
   "scripts": {
     "start": "gitbook serve",
+    "postinstall": "gitbook install",
     "build": "rm -rf _book && gitbook build",
     "deploy": "yarn run build && gh-pages -d _book"
   },
