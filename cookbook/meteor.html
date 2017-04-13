@@ -371,49 +371,6 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="meteor">Meteor</h1>
-<p><em>JSAccounts adapter for MeteorJS: override and extends Meteor methods and publication with JSAccounts authentication.</em></p>
-<h2 id="install">Install</h2>
-<pre><code>yarn add @accounts/meteor-adapter
-</code></pre><h2 id="use-in-meteor-client-side">Use in Meteor client-side</h2>
-<p>To use with Meteor client-side, use your <code>AccountsClient</code> instance and <code>Meteor</code> instance, and use this package on your Meteor&apos;s client-side entry point (usually <code>client/main.js</code>):</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Meteor } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;meteor/meteor&apos;</span>;
-<span class="hljs-keyword">import</span> AccountsClient <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/client&apos;</span>;
-<span class="hljs-keyword">import</span> { wrapMeteorClient } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/meteor-adapter&apos;</span>;
-
-AccountsClient.config({}); <span class="hljs-comment">// Config your accounts client</span>
-
-wrapMeteorClient(Meteor, AccountsClient);
-</code></pre>
-<p>Now, each time you call <code>Meteor.call</code> or <code>Meteor.subscribe</code> - the JSAccounts <code>accessToken</code> will be appended to your request, and your server will be able to validate it.</p>
-<h2 id="use-in-meteor-server-side">Use in Meteor server-side</h2>
-<p>To use with Meteor client-side, use your <code>AccountsServer</code> instance and <code>Meteor</code> instance, and use this package on your Meteor&apos;s client-side entry point (usually <code>server/main.js</code>):</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Meteor } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;meteor/meteor&apos;</span>;
-<span class="hljs-keyword">import</span> AccountsServer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/server&apos;</span>;
-<span class="hljs-keyword">import</span> { wrapMeteorServer } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/meteor-adapter&apos;</span>;
-
-AccountsServer.config({}); <span class="hljs-comment">// Config your accounts server</span>
-
-wrapMeteorServer(Meteor, AccountsServer);
-
-Meteor.startup(() =&gt; {
-    <span class="hljs-comment">// ...</span>
-});
-</code></pre>
-<p>Now, each time you call <code>Meteor.methods</code> or <code>Meteor.publish</code> - the JSAccounts <code>accessToken</code> will parsed and validated, and the <code>user</code> and <code>userId</code> will be available for use inside your callback, for example:</p>
-<pre><code class="lang-js">Meteor.publish(<span class="hljs-string">&apos;myPulication&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">this</span>.user(); <span class="hljs-comment">// JSAccounts user, or null if there is no user at all</span>
-    <span class="hljs-keyword">const</span> userId = <span class="hljs-keyword">this</span>.userId(); <span class="hljs-comment">// JSAccounts user id, or null if there is no user at all</span>
-});
-
-Meteor.methods({
-    myFunc: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">this</span>.user(); <span class="hljs-comment">// JSAccounts user, or null if there is no user at all</span>
-        <span class="hljs-keyword">const</span> userId = <span class="hljs-keyword">this</span>.userId(); <span class="hljs-comment">// JSAccounts user id, or null if there is no user at all</span>
-    }
-});
-</code></pre>
-<p>Note that if there method is called without an authenticated use in the client side, the <code>user</code> and <code>userId</code> will return <code>null</code> values - so you should check it inside your method.
-If the user specified a token but it&apos;s not valid - the method/pulication will fail with the JSAccounts error.</p>
 
                                 
                                 </section>
@@ -453,7 +410,7 @@ If the user specified a token but it&apos;s not valid - the method/pulication wi
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Meteor","level":"1.7.2","depth":2,"previous":{"title":"Express","level":"1.7.1","depth":2,"path":"cookbook/express.md","ref":"cookbook/express.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"cookbook/meteor.md","mtime":"2017-04-12T14:41:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T14:56:24.203Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Meteor","level":"1.7.2","depth":2,"previous":{"title":"Express","level":"1.7.1","depth":2,"path":"cookbook/express.md","ref":"cookbook/express.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"cookbook/meteor.md","mtime":"2017-04-04T16:57:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-13T10:34:42.870Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

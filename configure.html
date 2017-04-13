@@ -373,6 +373,92 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="configure">Configure</h1>
+<p>js-accounts offer a huge ammount of customization options on the client and server.</p>
+<h2 id="basic-configuration">Basic configuration</h2>
+<h3 id="client-rest-no-view-layer">Client (Rest, No view layer)</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { AccountsClient } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/client&apos;</span>;
+<span class="hljs-keyword">import</span> RestClient <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/rest-client&apos;</span>;
+
+<span class="hljs-keyword">const</span> restClient = <span class="hljs-keyword">new</span> RestClient({
+  apiHost: <span class="hljs-string">&apos;http://server.com&apos;</span>,
+  rootPath: <span class="hljs-string">&apos;/accounts&apos;</span>,
+});
+
+<span class="hljs-keyword">const</span> clientOptions = {}; <span class="hljs-comment">// Defaults are provided for all mendatory options</span>
+                          <span class="hljs-comment">// So you don&apos;t have to pass in anything.</span>
+
+<span class="hljs-keyword">const</span> accountsClient = <span class="hljs-keyword">new</span> AccountsClient(clientOptions, restClient);
+
+accountsClient.loginWithPassword(<span class="hljs-string">&apos;userId&apos;</span>, <span class="hljs-string">&apos;123456&apos;</span>)
+  .then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Logged In!&apos;</span>))
+  .catch(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Login failed!&apos;</span>));
+</code></pre>
+<h3 id="server-express-mongo">Server (Express, Mongo)</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;express&apos;</span>;
+<span class="hljs-keyword">import</span> bodyParser <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;body-parser&apos;</span>;
+<span class="hljs-keyword">import</span> { AccountsServer } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/server&apos;</span>;
+<span class="hljs-keyword">import</span> accountsExpress <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/rest-express&apos;</span>;
+<span class="hljs-keyword">import</span> { MongoClient } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;mongodb&apos;</span>;
+<span class="hljs-keyword">import</span> MongoAdapter <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/mongo&apos;</span>;
+
+<span class="hljs-keyword">const</span> mongoAdapter = <span class="hljs-keyword">await</span> MongoClient.connect(MONGO_URL).then(db =&gt; <span class="hljs-keyword">new</span> MongoAdapter(db));
+
+<span class="hljs-keyword">const</span> serverOptions = {
+  tokenConfigs: {
+    accessToken: {
+      expiresIn: <span class="hljs-string">&apos;1d&apos;</span>,
+    },
+    refreshToken: {
+      expiresIn: <span class="hljs-string">&apos;14d&apos;</span>,
+    },
+  }
+};
+
+<span class="hljs-keyword">const</span> app = express().use(bodyParser.json());
+
+<span class="hljs-keyword">const</span> accountsServer = <span class="hljs-keyword">new</span> AccountsServer(serverOptions, mongo);
+app.use(accountsExpress(accountsServer));
+
+app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Listening on port&apos;</span>, PORT));
+</code></pre>
+<h2 id="client-store">Client Store</h2>
+<p>js-accounts client uses redux store to handle state. If you don&apos;t use redux in you application you should not worry about it.
+If you do use redux, then you probably want to initialize the redux store on your own. In that case, you can pass in a redux store object to the AccountsClient constructor like so:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { AccountsClient, reducer <span class="hljs-keyword">as</span> accounts } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@accounts/client&apos;</span>
+<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+
+<span class="hljs-keyword">const</span> reduxStore = createStore(combineReducers({
+  accounts,
+  ...otherReducers,
+}), enhancers);
+
+<span class="hljs-keyword">const</span> clientOptions = {
+  store: reduxStore,
+};
+
+<span class="hljs-keyword">const</span> accountsClient = <span class="hljs-keyword">new</span> AccountsClient(clientOptions, restClient);
+</code></pre>
+<p>You can also customize the store token being used by accounts like so:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> ACCOUNTS_STORE_KEY = <span class="hljs-string">&apos;very_complex_key&apos;</span>;
+
+<span class="hljs-keyword">const</span> reduxStore = createStore(combineReducers({
+  [ACCOUNTS_STORE_KEY]: accounts,
+  ...otherReducers,
+}), enhancers);
+
+<span class="hljs-keyword">const</span> clientOptions = {
+  store: reduxStore,
+  reduxStoreKey: ACCOUNTS_STORE_KEY,
+};
+
+<span class="hljs-keyword">const</span> accountsClient = <span class="hljs-keyword">new</span> AccountsClient(clientOptions, restClient);
+</code></pre>
+<h2 id="customize-token-storage">Customize Token Storage</h2>
+<h2 id="customize-validations">Customize Validations</h2>
+<h2 id="customize-authentication">Customize Authentication</h2>
+<h2 id="customize-encription">Customize Encription</h2>
+<h2 id="customize-email-handlers">Customize Email Handlers</h2>
+<h2 id="customize-user-object">Customize User Object</h2>
 
                                 
                                 </section>
@@ -416,7 +502,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Configure","level":"1.2","depth":1,"next":{"title":"Strategies","level":"1.3","depth":1,"path":"strategies/README.md","ref":"strategies/README.md","articles":[{"title":"Password","level":"1.3.1","depth":2,"path":"strategies/password.md","ref":"strategies/password.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"configure.md","mtime":"2017-03-10T08:19:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T14:56:24.203Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Configure","level":"1.2","depth":1,"next":{"title":"Strategies","level":"1.3","depth":1,"path":"strategies/README.md","ref":"strategies/README.md","articles":[{"title":"Password","level":"1.3.1","depth":2,"path":"strategies/password.md","ref":"strategies/password.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/js-accounts/docs/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"configure.md","mtime":"2017-04-13T10:30:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-13T10:34:42.870Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
