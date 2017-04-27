@@ -1,6 +1,6 @@
 # js-accounts
 
-The js-accounts organiztion develops and maintains a modular accounts system for the javscript domain.
+The js-accounts organization develops and maintains a modular accounts system for the javscript domain.
 The basic idea is to have authentication view, business logic, transport and data storage separated to multiple packages so you can opt in and out of parts of the account system, but the whole suite should allow the user to have a complete, generic and customizable account system.
 
 ## Prior Art
