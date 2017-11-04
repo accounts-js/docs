@@ -17,14 +17,17 @@ import AccountsServer from '@accounts/server';
 import MongoDBInterface from '@accounts/mongo';
 
 // If you are using mongoose
+import mongoose from 'mongoose';
 mongoose.connect(process.env.MONGO_URL);
 const db = mongoose.connection;
 
 // If you are using mongodb
+import mongodb from 'mongodb';
 const db =  await mongodb.MongoClient.connect(process.env.MONGO_URL);
 
-AccountsServer.config({
-}, new MongoDBInterface(db));
+const accountsServer = new AccountsServer({
+  db: new MongoDBInterface(db)
+});
 ```
 
 ## Options
@@ -42,9 +45,12 @@ const options = {
     updatedAt: string,
   },
   // Should the collection use _id as string or ObjectId, default 'true'
-  convertUserIdToMongoObjectId: boolean
+  convertUserIdToMongoObjectId: boolean,
+  // Should the session collection use _id as string or ObjectId, default 'true'
+  convertSessionIdToMongoObjectId: boolean,
+  // Perform case intensitive query for user name, default 'true'
+  caseSensitiveUserName: boolean,
 };
 
-AccountsServer.config({
-}, new MongoDBInterface(db, options));
+new MongoDBInterface(db, options);
 ```
