@@ -18,16 +18,12 @@ If you have a question that you think, could shape this project, please PR this 
 
 ### Why wouldn't you just use passport??
 
-We are not here to replace passport.js. Actually, in our vision, passport.js will be one authentication method that you can plug in. Currently, the only problem with passport.js in that regard is that it is designed to work with connect middlewares and adapter code is need to plug into let's say a WS transport. 
+We are not here to replace passport.js. Actually, in our vision, passport.js will be one authentication method that you can plug in. Currently, the only problem with passport.js in that regard is that it is designed to work with connect middlewares and adapter code is need to plug into let's say a WS transport.
 We currently implemented our own local strategy just to make sense out of basic accounts packages. In the close future it will be seperated to it's own pakcage.
 
 ### Why not refactor out the meteor accounts suite?
 
 Well, as explained above, Meteor's accounts system is tied to the data storage and transport in a way that is actually harder to separate then rewriting with those abstractions in mind. We do offer an adapter package that allows Meteor applications an easy and gradual way to move out of Meteor's current accounts system.
-
-### Why do you use flowtype?
-
-This decision was made early on in the project's life as a way to keep the code in plain javascript and gradually add in typings where it makes sense. TBH, flowtype's developer experience isn't great, so if some magical hero comes along and turnes this whole project into typescript we will probably merge that.
 
 ### Why do you use multiple mono-repo's?
 
