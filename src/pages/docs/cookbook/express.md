@@ -20,12 +20,14 @@ import bodyParser from 'body-parser';
 import AccountsServer from '@accounts/server';
 import accountsExpress from '@accounts/rest-express';
 
-AccountsServer.config({}); // Config your accounts server
+const accountsServer = new AccountsServer(...); // Config your accounts server
 
 // Config express
+const app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(accountsExpress(AccountsServer));
+app.use(accountsExpress(accountsServer));
 
 app.listen(process.env.PORT, () => console.log(
   `API Server is now running on http://localhost:${process.env.PORT}`,

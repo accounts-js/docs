@@ -33,3 +33,14 @@ app.use(accountsExpress(accountsServer));
 
 app.listen(3000);
 ```
+
+## Options
+
+```javascript
+const options = {
+  // Path that prefix the express routes for the accounts middleware
+  path: string,
+};
+
+app.use(accountsExpress(accountsServer, accountsExpressOptions));
+```
