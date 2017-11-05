@@ -1,17 +1,34 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+`;
+
+const Sidenav = styled.div`
+  width: 25%;
+`;
+
+const Content = styled.div`
+  width: 75%;
+`;
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-        </div>
-      ))}
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
+    <Container>
+      <Sidenav>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div key={node.id}>
+            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+          </div>
+        ))}
+      </Sidenav>
+      <Content>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Content>
+    </Container>
   );
 };
 
