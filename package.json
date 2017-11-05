@@ -1,11 +1,18 @@
 {
   "name": "docs",
+  "private": true,
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "yarn run build && gh-pages -d _book"
+    "test": "yarn run lint && yarn run prettier-diff && yarn run build",
+    "deploy": "yarn run build && gh-pages -d _book",
+    "lint": "tslint -c tslint.json '{src,__tests__}/**/*.{ts,tsx}'",
+    "prettier": "prettier --single-quote --trailing-comma es5 --parser typescript 'src/**/*.{ts,tsx,css}'",
+    "prettier-diff": "yarn prettier --list-different",
+    "format": "yarn prettier --write"
   },
   "devDependencies": {
+    "@accounts/tslint-config-accounts": "^0.0.5",
     "@types/react": "^16.0.20",
     "@types/react-dom": "^16.0.2",
     "gatsby": "^1.9.100",
@@ -14,6 +21,8 @@
     "gatsby-plugin-react-next": "^1.0.4",
     "gatsby-plugin-typescript": "^1.4.10",
     "gh-pages": "^0.12.0",
+    "prettier": "^1.7.4",
+    "tslint": "^5.8.0",
     "typescript": "^2.6.1"
   },
   "dependencies": {
