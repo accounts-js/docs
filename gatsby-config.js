@@ -12,5 +12,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.ts`,
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 }
