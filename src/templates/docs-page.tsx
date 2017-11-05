@@ -47,6 +47,9 @@ export default ({ data }) => {
           <ListItem>
             <StyledLink to="/docs/configure/">Configure</StyledLink>
           </ListItem>
+          <ListItem>
+            <StyledLink to="/docs/emails/">Emails</StyledLink>
+          </ListItem>
         </List>
         <List>
           <ListItem className="title">Strategies</ListItem>
