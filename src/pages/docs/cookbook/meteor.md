@@ -1,3 +1,7 @@
+---
+title: "Meteor"
+---
+
 # Meteor
 
 *JSAccounts adapter for MeteorJS: override and extends Meteor methods and publication with JSAccounts authentication.*

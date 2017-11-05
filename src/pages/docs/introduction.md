@@ -1,3 +1,7 @@
+---
+title: "Introduction"
+---
+
 # js-accounts
 
 The js-accounts organization develops and maintains a modular accounts system for the javascript domain.

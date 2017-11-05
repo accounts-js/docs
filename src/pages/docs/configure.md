@@ -1,3 +1,7 @@
+---
+title: "Configure"
+---
+
 # Configure
 
 js-accounts offer a huge amount of customization options on the client and server.
