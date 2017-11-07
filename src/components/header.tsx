@@ -22,12 +22,12 @@ const StyledContainer = styled(Container)`
 
 const Item = styled(Link)`
   text-decoration: none;
-  text-transform: uppercase;
-  color: black;
+  color: rgba(26, 83, 92, 1);
   padding: 0 14px;
   font-size: 14px;
+  font-weight: 600;
   &:hover {
-    color: #535e6a;
+    color: rgba(26, 83, 92, 0.7);
   }
 `;
 

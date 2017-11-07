@@ -9,12 +9,12 @@ const Container = styled.div`
 const Sidenav = styled.div`
   width: 25%;
   padding: 30px 20px 20px;
-  background-color: #f7f9fa;
+  background-color: rgba(0, 0, 0, 0.03);
 `;
 
 const Content = styled.div`
   width: 75%;
-  padding: 30px 20px 20px;
+  padding: 30px 40px 20px;
 `;
 
 const List = styled.ul`
@@ -23,15 +23,26 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  margin-bottom: 4px;
+  margin: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 14px;
   &.title {
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    color: rgba(26, 83, 92, 1);
+    font-weight: 600;
   }
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: rgba(26, 83, 92, 1);
+  &:hover {
+    color: rgba(26, 83, 92, 0.7);
+  }
+  &.active {
+    color: #FF6B6B;
+  }
 `;
 
 export default ({ data }) => {
@@ -42,55 +53,55 @@ export default ({ data }) => {
         <List>
           <ListItem className="title">General</ListItem>
           <ListItem>
-            <StyledLink to="/docs/introduction/">Introduction</StyledLink>
+            <StyledLink to="/docs/introduction/" activeClassName="active">Introduction</StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="/docs/configure/">Configure</StyledLink>
+            <StyledLink to="/docs/configure/" activeClassName="active">Configure</StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="/docs/emails/">Emails</StyledLink>
+            <StyledLink to="/docs/emails/" activeClassName="active">Emails</StyledLink>
           </ListItem>
         </List>
         <List>
           <ListItem className="title">Strategies</ListItem>
           <ListItem>
-            <StyledLink to="/docs/strategies/password/">Password</StyledLink>
+            <StyledLink to="/docs/strategies/password/" activeClassName="active">Password</StyledLink>
           </ListItem>
         </List>
         <List>
           <ListItem className="title">Transport</ListItem>
           <ListItem>
-            <StyledLink to="/docs/transport/rest/">Rest</StyledLink>
+            <StyledLink to="/docs/transport/rest/" activeClassName="active">Rest</StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="/docs/transport/graphql/">Graphql</StyledLink>
+            <StyledLink to="/docs/transport/graphql/" activeClassName="active">Graphql</StyledLink>
           </ListItem>
         </List>
         <List>
           <ListItem className="title">Databases</ListItem>
           <ListItem>
-            <StyledLink to="/docs/databases/mongo/">Mongo</StyledLink>
+            <StyledLink to="/docs/databases/mongo/" activeClassName="active">Mongo</StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="/docs/databases/redis/">Redis</StyledLink>
+            <StyledLink to="/docs/databases/redis/" activeClassName="active">Redis</StyledLink>
           </ListItem>
         </List>
         <List>
           <ListItem className="title">UI</ListItem>
           <ListItem>
-            <StyledLink to="/docs/ui/react/">React</StyledLink>
+            <StyledLink to="/docs/ui/react/" activeClassName="active">React</StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="/docs/ui/react-native/">React-native</StyledLink>
+            <StyledLink to="/docs/ui/react-native/" activeClassName="active">React-native</StyledLink>
           </ListItem>
         </List>
         <List>
           <ListItem className="title">Cookbook</ListItem>
           <ListItem>
-            <StyledLink to="/docs/cookbook/express/">Express</StyledLink>
+            <StyledLink to="/docs/cookbook/express/" activeClassName="active">Express</StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="/docs/cookbook/meteor/">Meteor</StyledLink>
+            <StyledLink to="/docs/cookbook/meteor/" activeClassName="active">Meteor</StyledLink>
           </ListItem>
         </List>
       </Sidenav>
