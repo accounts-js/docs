@@ -5,6 +5,7 @@ title: "Emails"
 # Emails
 
 Configuration:
+
 ```javascript
 {
   // A valid email config object passed to emailjs
@@ -15,6 +16,7 @@ Configuration:
 ```
 
 To overwrite the email templates:
+
 ```javascript
 const emailTemplates = {
   from: 'my-app <no-reply@my-app.com>',

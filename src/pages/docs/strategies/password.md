@@ -4,9 +4,10 @@ title: "Password"
 
 # Password
 
-[Github](https://github.com/js-accounts/accounts) | [npm](https://www.npmjs.com/package/@accounts/password)
+[Github](https://github.com/js-accounts/accounts) |
+[npm](https://www.npmjs.com/package/@accounts/password)
 
-*Password Strategy for js-accounts*
+_Password Strategy for js-accounts_
 
 ## Install
 
@@ -22,6 +23,6 @@ import AccountsPassword from '@accounts/password';
 
 const password = new AccountsPassword(...config);
 const accountsServer = new AccountsServer(...config, {
-  password: password
+  password: password,
 });
 ```

@@ -4,7 +4,7 @@ title: "Express"
 
 # Express
 
-*JSAccounts middleware for ExpressJS*
+_JSAccounts middleware for ExpressJS_
 
 ## Install
 
@@ -32,5 +32,4 @@ app.use(accountsExpress(accountsServer));
 app.listen(process.env.PORT, () => console.log(
   `API Server is now running on http://localhost:${process.env.PORT}`,
 ));
-
 ```

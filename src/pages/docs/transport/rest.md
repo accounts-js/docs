@@ -4,9 +4,10 @@ title: "Rest"
 
 # Rest
 
-[Github](https://github.com/js-accounts/rest) | [npm](https://www.npmjs.com/package/@accounts/rest-express)
+[Github](https://github.com/js-accounts/rest) |
+[npm](https://www.npmjs.com/package/@accounts/rest-express)
 
-*REST server for js-accounts*
+_REST server for js-accounts_
 
 ## Express
 
