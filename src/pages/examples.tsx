@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const ExamplesPage = () => (
-  <div>
+  <div className="container">
     <p>Examples on how to use the @js-accounts packages:</p>
     <ul>
       <li>

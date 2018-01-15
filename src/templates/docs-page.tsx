@@ -19,18 +19,13 @@ const Content = styled.div`
 
 const List = styled.ul`
   list-style: none;
-  margin-left: 0;
 `;
 
 const ListItem = styled.li`
-  margin: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
   font-size: 14px;
-  &.title {
-    font-size: 16px;
-    color: rgba(26, 83, 92, 1);
-    font-weight: 600;
+  &.title:not(:first-child) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
   }
 `;
 
@@ -48,94 +43,87 @@ const StyledLink = styled(Link)`
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <Container>
-      <Sidenav>
-        <List>
-          <ListItem className="title">General</ListItem>
-          <ListItem>
-            <StyledLink to="/docs/introduction/" activeClassName="active">
-              Introduction
-            </StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/configure/" activeClassName="active">
-              Configure
-            </StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/emails/" activeClassName="active">
-              Emails
-            </StyledLink>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Strategies</ListItem>
-          <ListItem>
-            <StyledLink
-              to="/docs/strategies/password/"
-              activeClassName="active"
-            >
-              Password
-            </StyledLink>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Transport</ListItem>
-          <ListItem>
-            <StyledLink to="/docs/transport/rest/" activeClassName="active">
-              Rest
-            </StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/transport/graphql/" activeClassName="active">
-              Graphql
-            </StyledLink>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Databases</ListItem>
-          <ListItem>
-            <StyledLink to="/docs/databases/mongo/" activeClassName="active">
-              Mongo
-            </StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/databases/redis/" activeClassName="active">
-              Redis
-            </StyledLink>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">UI</ListItem>
-          <ListItem>
-            <StyledLink to="/docs/ui/react/" activeClassName="active">
-              React
-            </StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/ui/react-native/" activeClassName="active">
-              React-native
-            </StyledLink>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Cookbook</ListItem>
-          <ListItem>
-            <StyledLink to="/docs/cookbook/express/" activeClassName="active">
-              Express
-            </StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/cookbook/meteor/" activeClassName="active">
-              Meteor
-            </StyledLink>
-          </ListItem>
-        </List>
-      </Sidenav>
-      <Content>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Content>
-    </Container>
+    <div className="container">
+      <div className="columns">
+        <div className="column is-one-fifth">
+          <List>
+            <ListItem className="title is-6">General</ListItem>
+            <ListItem>
+              <StyledLink to="/docs/introduction/" activeClassName="active">
+                Introduction
+              </StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink to="/docs/configure/" activeClassName="active">
+                Configure
+              </StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink to="/docs/emails/" activeClassName="active">
+                Emails
+              </StyledLink>
+            </ListItem>
+            <ListItem className="title is-6">Strategies</ListItem>
+            <ListItem>
+              <StyledLink
+                to="/docs/strategies/password/"
+                activeClassName="active"
+              >
+                Password
+              </StyledLink>
+            </ListItem>
+            <ListItem className="title is-6">Transport</ListItem>
+            <ListItem>
+              <StyledLink to="/docs/transport/rest/" activeClassName="active">
+                Rest
+              </StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink
+                to="/docs/transport/graphql/"
+                activeClassName="active"
+              >
+                Graphql
+              </StyledLink>
+            </ListItem>
+            <ListItem className="title is-6">Databases</ListItem>
+            <ListItem>
+              <StyledLink to="/docs/databases/mongo/" activeClassName="active">
+                Mongo
+              </StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink to="/docs/databases/redis/" activeClassName="active">
+                Redis
+              </StyledLink>
+            </ListItem>
+            <ListItem className="title is-6">UI</ListItem>
+            <ListItem>
+              <StyledLink to="/docs/ui/react/" activeClassName="active">
+                React
+              </StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink to="/docs/ui/react-native/" activeClassName="active">
+                React-native
+              </StyledLink>
+            </ListItem>
+            <ListItem className="title is-6">Cookbook</ListItem>
+            <ListItem>
+              <StyledLink to="/docs/cookbook/express/" activeClassName="active">
+                Express
+              </StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink to="/docs/cookbook/meteor/" activeClassName="active">
+                Meteor
+              </StyledLink>
+            </ListItem>
+          </List>
+        </div>
+        <div className="column"><div className="content" dangerouslySetInnerHTML={{ __html: post.html }} /></div>
+      </div>
+    </div>
   );
 };
 

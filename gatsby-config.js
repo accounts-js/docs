@@ -21,12 +21,7 @@ module.exports = {
     },
     `gatsby-plugin-react-next`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.ts`,
-      },
-    },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
   ],
 }
