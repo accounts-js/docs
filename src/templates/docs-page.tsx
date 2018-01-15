@@ -121,7 +121,12 @@ export default ({ data }) => {
             </ListItem>
           </List>
         </div>
-        <div className="column"><div className="content" dangerouslySetInnerHTML={{ __html: post.html }} /></div>
+        <div className="column">
+          <div
+            className="content"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </div>
       </div>
     </div>
   );
