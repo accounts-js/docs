@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import '../styles/style.scss';
-
-require('prismjs/themes/prism-okaidia.css');
+import '../styles/prism-base16-ateliersulphurpool.light.css';
 
 const StyledContainer = styled.div`
   margin-top: 20px;

@@ -19,6 +19,7 @@ const Content = styled.div`
 
 const List = styled.ul`
   list-style: none;
+  margin-top: 13px;
 `;
 
 const ListItem = styled.li`
