@@ -6,7 +6,7 @@ import '../styles/style.scss';
 import '../styles/prism-base16-ateliersulphurpool.light.css';
 
 const StyledContainer = styled.div`
-  margin-top: 20px;
+  margin-top: 20px !important;
 `;
 export default function IndexLayout({ children }) {
   return (
