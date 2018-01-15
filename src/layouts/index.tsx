@@ -10,10 +10,10 @@ const StyledContainer = styled.div`
 `;
 export default function IndexLayout({ children }) {
   return (
-    <div>
+    <React.Fragment>
       <Header />
-      <StyledContainer>{children()}</StyledContainer>
+      <StyledContainer className="container">{children()}</StyledContainer>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 }
