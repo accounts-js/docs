@@ -23,9 +23,11 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   font-size: 14px;
+  &.title {
+    margin-bottom: 0.6rem;
+  }
   &.title:not(:first-child) {
     margin-top: 1.5rem;
-    margin-bottom: 0.6rem;
   }
 `;
 

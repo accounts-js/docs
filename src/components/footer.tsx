@@ -1,8 +1,13 @@
 import * as React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.footer`
+  margin-top: 50px;
+`;
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <Container className="footer">
       <div className="container">
         <div className="content has-text-centered">
           <p>
@@ -11,6 +16,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+    </Container>
   );
 }

@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import * as logo from '../img/logo.png';
-import Container from '../components/container';
 import GithubIcon from '../icons/github';
 
 export default function Header() {
@@ -13,15 +12,24 @@ export default function Header() {
           <Link className="navbar-item" to="/">
             <img src={logo} alt="Accounts-js logo" height="28" />
           </Link>
-          <div className="navbar-menu">
-            <div className="navbar-start">
-              <Link className="navbar-item" to="/docs/introduction/">
-                Docs
-              </Link>
-              <Link className="navbar-item" to="/examples/">
-                Examples
-              </Link>
-            </div>
+        </div>
+        <div className="navbar-menu">
+          <div className="navbar-start">
+            <Link className="navbar-item" to="/docs/introduction/">
+              Docs
+            </Link>
+            <Link className="navbar-item" to="/examples/">
+              Examples
+            </Link>
+          </div>
+          <div className="navbar-end">
+            <a
+              className="navbar-item"
+              href="https://github.com/js-accounts/accounts"
+              target="_blank"
+            >
+              <GithubIcon />
+            </a>
           </div>
         </div>
       </nav>
