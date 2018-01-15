@@ -39,7 +39,7 @@ const StyledLink = styled(Link)`
     color: rgba(26, 83, 92, 0.7);
   }
   &.active {
-    color: #52B5B4;
+    color: #52b5b4;
     font-weight: 600;
   }
 `;
