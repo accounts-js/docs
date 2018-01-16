@@ -45,7 +45,7 @@ const StyledLink = styled(Link)`
 `;
 
 const EditButton = styled.a`
-  color: rgba(10,10,10,0.5) !important;
+  color: rgba(10, 10, 10, 0.5) !important;
 `;
 
 export default ({ data, pathContext }) => {
@@ -53,7 +53,6 @@ export default ({ data, pathContext }) => {
   let slug = pathContext.slug;
   // remove last char
   slug = slug.substring(0, slug.length - 1);
-  console.log(slug);
   return (
     <div className="columns">
       <div className="column is-one-fifth">
@@ -76,11 +75,27 @@ export default ({ data, pathContext }) => {
           </ListItem>
           <ListItem className="title is-6">Strategies</ListItem>
           <ListItem>
-            <StyledLink
+          <StyledLink
               to="/docs/strategies/password/"
               activeClassName="active"
             >
               Password
+            </StyledLink>
+          </ListItem>
+          <ListItem>
+          <StyledLink
+              to="/docs/strategies/facebook/"
+              activeClassName="active"
+            >
+              Facebook
+            </StyledLink>
+          </ListItem>
+          <ListItem>
+          <StyledLink
+              to="/docs/strategies/twitter/"
+              activeClassName="active"
+            >
+              Twitter
             </StyledLink>
           </ListItem>
           <ListItem className="title is-6">Transport</ListItem>
