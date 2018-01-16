@@ -44,8 +44,16 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default ({ data }) => {
+const EditButton = styled.a`
+  color: rgba(10,10,10,0.5) !important;
+`;
+
+export default ({ data, pathContext }) => {
   const post = data.markdownRemark;
+  let slug = pathContext.slug;
+  // remove last char
+  slug = slug.substring(0, slug.length - 1);
+  console.log(slug);
   return (
     <div className="columns">
       <div className="column is-one-fifth">
@@ -126,6 +134,15 @@ export default ({ data }) => {
           className="content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+        <div className="has-text-right">
+          <EditButton
+            className="button is-white"
+            href={`https://github.com/accounts-js/docs/tree/redesign-bulma/src/pages${slug}.md`}
+            target="_blank"
+          >
+            Edit this page on Github
+          </EditButton>
+        </div>
       </div>
     </div>
   );

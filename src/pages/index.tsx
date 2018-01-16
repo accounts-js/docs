@@ -6,8 +6,10 @@ const IndexPage = () => (
     <section className="hero">
       <div className="hero-body">
         <div className="container has-text-centered">
-          <h1 className="title">Hero title</h1>
-          <h2 className="subtitle">Hero subtitle</h2>
+          <h1 className="title">accounts-js</h1>
+          <h2 className="subtitle">
+            Fullstack authentication and accounts-management for Javascript
+          </h2>
           <Link className="button" to="/docs/introduction/">
             Get started
           </Link>
