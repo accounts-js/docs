@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 
 const Container = styled.div`
   display: flex;
@@ -50,11 +51,15 @@ const EditButton = styled.a`
 
 export default ({ data, pathContext }) => {
   const post = data.markdownRemark;
+  console.log(post)
   let slug = pathContext.slug;
   // remove last char
   slug = slug.substring(0, slug.length - 1);
   return (
     <div className="columns">
+      <Helmet>
+        <title>{post.frontmatter.title}</title>
+      </Helmet>
       <div className="column is-one-fifth">
         <List>
           <ListItem className="title is-6">General</ListItem>
