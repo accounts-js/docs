@@ -51,7 +51,6 @@ const EditButton = styled.a`
 
 export default ({ data, pathContext }) => {
   const post = data.markdownRemark;
-  console.log(post)
   let slug = pathContext.slug;
   // remove last char
   slug = slug.substring(0, slug.length - 1);

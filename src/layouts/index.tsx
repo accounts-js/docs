@@ -12,11 +12,11 @@ const StyledContainer = styled.div`
 export default function IndexLayout({ children }) {
   return (
     <React.Fragment>
-      <Helmet
-        defaultTitle="accounts-js"
-        titleTemplate="%s - accounts-js"
-      >
-        <meta name="description" content="Fullstack authentication and accounts-management for Javascript" />
+      <Helmet defaultTitle="accounts-js" titleTemplate="%s - accounts-js">
+        <meta
+          name="description"
+          content="Fullstack authentication and accounts-management for Javascript"
+        />
       </Helmet>
       <Header />
       <StyledContainer className="container">{children()}</StyledContainer>
