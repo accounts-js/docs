@@ -22,6 +22,7 @@
     "gatsby-plugin-styled-components": "^1.0.5",
     "gatsby-plugin-typescript": "^1.4.12",
     "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-remark-autolink-headers": "^1.4.11",
     "gatsby-remark-prismjs": "^1.2.11",
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.28",
