@@ -75,7 +75,7 @@ export default ({ data, pathContext }) => {
           </ListItem>
           <ListItem className="title is-6">Strategies</ListItem>
           <ListItem>
-          <StyledLink
+            <StyledLink
               to="/docs/strategies/password/"
               activeClassName="active"
             >
@@ -83,7 +83,7 @@ export default ({ data, pathContext }) => {
             </StyledLink>
           </ListItem>
           <ListItem>
-          <StyledLink
+            <StyledLink
               to="/docs/strategies/facebook/"
               activeClassName="active"
             >
@@ -91,10 +91,7 @@ export default ({ data, pathContext }) => {
             </StyledLink>
           </ListItem>
           <ListItem>
-          <StyledLink
-              to="/docs/strategies/twitter/"
-              activeClassName="active"
-            >
+            <StyledLink to="/docs/strategies/twitter/" activeClassName="active">
               Twitter
             </StyledLink>
           </ListItem>
@@ -152,7 +149,7 @@ export default ({ data, pathContext }) => {
         <div className="has-text-right">
           <EditButton
             className="button is-white"
-            href={`https://github.com/accounts-js/docs/tree/redesign-bulma/src/pages${slug}.md`}
+            href={`https://github.com/accounts-js/docs/tree/master/src/pages${slug}.md`}
             target="_blank"
           >
             Edit this page on Github
