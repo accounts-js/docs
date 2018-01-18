@@ -116,22 +116,6 @@ export default ({ data, pathContext }) => {
               Mongo
             </StyledLink>
           </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/databases/redis/" activeClassName="active">
-              Redis
-            </StyledLink>
-          </ListItem>
-          <ListItem className="title is-6">UI</ListItem>
-          <ListItem>
-            <StyledLink to="/docs/ui/react/" activeClassName="active">
-              React
-            </StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/docs/ui/react-native/" activeClassName="active">
-              React-native
-            </StyledLink>
-          </ListItem>
           <ListItem className="title is-6">Cookbook</ListItem>
           <ListItem>
             <StyledLink to="/docs/cookbook/express/" activeClassName="active">
