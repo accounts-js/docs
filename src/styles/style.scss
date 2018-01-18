@@ -1,0 +1,7 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+$widescreen: 1000px + (2 * $gap);
+$fullhd: 1000px + (2 * $gap);
+
+@import "~bulma/bulma";

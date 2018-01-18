@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 
 const Container = styled.div`
   display: flex;
@@ -19,18 +20,16 @@ const Content = styled.div`
 
 const List = styled.ul`
   list-style: none;
-  margin-left: 0;
+  margin-top: 13px;
 `;
 
 const ListItem = styled.li`
-  margin: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
   font-size: 14px;
   &.title {
-    font-size: 16px;
-    color: rgba(26, 83, 92, 1);
-    font-weight: 600;
+    margin-bottom: 0.6rem !important;
+  }
+  &.title:not(:first-child) {
+    margin-top: 1.5rem !important;
   }
 `;
 
@@ -41,17 +40,28 @@ const StyledLink = styled(Link)`
     color: rgba(26, 83, 92, 0.7);
   }
   &.active {
-    color: #ff6b6b;
+    color: #52b5b4;
+    font-weight: 600;
   }
 `;
 
-export default ({ data }) => {
+const EditButton = styled.a`
+  color: rgba(10, 10, 10, 0.5) !important;
+`;
+
+export default ({ data, pathContext }) => {
   const post = data.markdownRemark;
+  let slug = pathContext.slug;
+  // remove last char
+  slug = slug.substring(0, slug.length - 1);
   return (
-    <Container>
-      <Sidenav>
+    <div className="columns">
+      <Helmet>
+        <title>{post.frontmatter.title}</title>
+      </Helmet>
+      <div className="column is-one-fifth">
         <List>
-          <ListItem className="title">General</ListItem>
+          <ListItem className="title is-6">General</ListItem>
           <ListItem>
             <StyledLink to="/docs/introduction/" activeClassName="active">
               Introduction
@@ -67,9 +77,7 @@ export default ({ data }) => {
               Emails
             </StyledLink>
           </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Strategies</ListItem>
+          <ListItem className="title is-6">Strategies</ListItem>
           <ListItem>
             <StyledLink
               to="/docs/strategies/password/"
@@ -78,9 +86,20 @@ export default ({ data }) => {
               Password
             </StyledLink>
           </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Transport</ListItem>
+          <ListItem>
+            <StyledLink
+              to="/docs/strategies/facebook/"
+              activeClassName="active"
+            >
+              Facebook
+            </StyledLink>
+          </ListItem>
+          <ListItem>
+            <StyledLink to="/docs/strategies/twitter/" activeClassName="active">
+              Twitter
+            </StyledLink>
+          </ListItem>
+          <ListItem className="title is-6">Transport</ListItem>
           <ListItem>
             <StyledLink to="/docs/transport/rest/" activeClassName="active">
               Rest
@@ -91,9 +110,7 @@ export default ({ data }) => {
               Graphql
             </StyledLink>
           </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Databases</ListItem>
+          <ListItem className="title is-6">Databases</ListItem>
           <ListItem>
             <StyledLink to="/docs/databases/mongo/" activeClassName="active">
               Mongo
@@ -104,9 +121,7 @@ export default ({ data }) => {
               Redis
             </StyledLink>
           </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">UI</ListItem>
+          <ListItem className="title is-6">UI</ListItem>
           <ListItem>
             <StyledLink to="/docs/ui/react/" activeClassName="active">
               React
@@ -117,9 +132,7 @@ export default ({ data }) => {
               React-native
             </StyledLink>
           </ListItem>
-        </List>
-        <List>
-          <ListItem className="title">Cookbook</ListItem>
+          <ListItem className="title is-6">Cookbook</ListItem>
           <ListItem>
             <StyledLink to="/docs/cookbook/express/" activeClassName="active">
               Express
@@ -131,11 +144,23 @@ export default ({ data }) => {
             </StyledLink>
           </ListItem>
         </List>
-      </Sidenav>
-      <Content>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Content>
-    </Container>
+      </div>
+      <div className="column">
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <div className="has-text-right">
+          <EditButton
+            className="button is-white"
+            href={`https://github.com/accounts-js/docs/tree/master/src/pages${slug}.md`}
+            target="_blank"
+          >
+            Edit this page on Github
+          </EditButton>
+        </div>
+      </div>
+    </div>
   );
 };
 

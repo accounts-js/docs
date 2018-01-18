@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const ExamplesPage = () => (
-  <div>
+  <React.Fragment>
     <p>Examples on how to use the @js-accounts packages:</p>
     <ul>
       <li>
@@ -10,7 +10,7 @@ const ExamplesPage = () => (
         </a>
       </li>
     </ul>
-  </div>
+  </React.Fragment>
 );
 
 export default ExamplesPage;
