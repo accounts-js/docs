@@ -2,7 +2,7 @@
 
 _Docs for accounts-js_
 
-[![Circle CI](https://circleci.com/gh/accounts-js/mongo.svg?style=shield)](https://circleci.com/gh/accounts-js/mongo)
+[![Circle CI](https://circleci.com/gh/accounts-js/docs.svg?style=shield)](https://circleci.com/gh/accounts-js/docs)
 
 ## Getting Started
 
