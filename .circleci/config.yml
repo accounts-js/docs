@@ -1,4 +1,6 @@
-version: 2 jobs:
+version: 2
+
+jobs:
   build:
     docker:
       - image: circleci/node:8
