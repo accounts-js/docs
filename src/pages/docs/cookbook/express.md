@@ -4,7 +4,7 @@ title: "Express"
 
 # Express
 
-_JSAccounts middleware for ExpressJS_
+_accounts-js middleware for ExpressJS_
 
 ## Install
 

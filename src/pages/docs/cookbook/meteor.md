@@ -4,8 +4,8 @@ title: "Meteor"
 
 # Meteor
 
-_JSAccounts adapter for MeteorJS: override and extends Meteor methods and
-publication with JSAccounts authentication._
+_accounts-js adapter for MeteorJS: override and extends Meteor methods and
+publication with accounts-js authentication._
 
 ## Install
 
@@ -29,7 +29,7 @@ AccountsClient.config({}); // Config your accounts client
 wrapMeteorClient(Meteor, AccountsClient);
 ```
 
-Now, each time you call `Meteor.call` or `Meteor.subscribe` - the JSAccounts
+Now, each time you call `Meteor.call` or `Meteor.subscribe` - the accounts-js
 `accessToken` will be appended to your request, and your server will be able to
 validate it.
 
@@ -53,20 +53,20 @@ Meteor.startup(() => {
 });
 ```
 
-Now, each time you call `Meteor.methods` or `Meteor.publish` - the JSAccounts
+Now, each time you call `Meteor.methods` or `Meteor.publish` - the accounts-js
 `accessToken` will parsed and validated, and the `user` and `userId` will be
 available for use inside your callback, for example:
 
 ```js
 Meteor.publish('myPulication', function() {
-  const user = this.user(); // JSAccounts user, or null if there is no user at all
-  const userId = this.userId(); // JSAccounts user id, or null if there is no user at all
+  const user = this.user(); // accounts-js user, or null if there is no user at all
+  const userId = this.userId(); // accounts-js user id, or null if there is no user at all
 });
 
 Meteor.methods({
   myFunc: function() {
-    const user = this.user(); // JSAccounts user, or null if there is no user at all
-    const userId = this.userId(); // JSAccounts user id, or null if there is no user at all
+    const user = this.user(); // accounts-js user, or null if there is no user at all
+    const userId = this.userId(); // accounts-js user id, or null if there is no user at all
   },
 });
 ```
@@ -74,4 +74,4 @@ Meteor.methods({
 Note that if there method is called without an authenticated use in the client
 side, the `user` and `userId` will return `null` values - so you should check it
 inside your method. If the user specified a token but it's not valid - the
-method/pulication will fail with the JSAccounts error.
+method/pulication will fail with the accounts-js error.
