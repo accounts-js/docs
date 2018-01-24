@@ -4,10 +4,10 @@ title: "Mongo"
 
 # Mongo
 
-[Github](https://github.com/js-accounts/mongo) |
+[Github](https://github.com/accounts-js/mongo) |
 [npm](https://www.npmjs.com/package/@accounts/mongo)
 
-_MongoDB data store for js-accounts_
+_MongoDB data store for accounts-js_
 
 ## Install
 

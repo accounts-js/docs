@@ -25,7 +25,7 @@ export default function Header() {
           <div className="navbar-end">
             <a
               className="navbar-item"
-              href="https://github.com/js-accounts/accounts"
+              href="https://github.com/accounts-js/accounts"
               target="_blank"
             >
               <GithubIcon />

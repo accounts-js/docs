@@ -4,7 +4,7 @@ title: "Configure"
 
 # Configure
 
-js-accounts offer a huge amount of customization options on the client and
+accounts-js offer a huge amount of customization options on the client and
 server.
 
 ## Basic configuration
@@ -64,7 +64,7 @@ app.listen(PORT, () => console.log('Listening on port', PORT));
 
 ## Client Store
 
-js-accounts client uses redux store to handle state. If you don't use redux in
+accounts-js client uses redux store to handle state. If you don't use redux in
 your application you should not worry about it. If you do use redux, then you
 probably want to initialize the redux store on your own. In that case, you can
 pass in a redux store object to the AccountsClient constructor like so:

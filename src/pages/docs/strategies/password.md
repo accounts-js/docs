@@ -4,10 +4,10 @@ title: "Password"
 
 # Password
 
-[Github](https://github.com/js-accounts/accounts) |
+[Github](https://github.com/accounts-js/accounts) |
 [npm](https://www.npmjs.com/package/@accounts/password)
 
-_Password Strategy for js-accounts_
+_Password Strategy for accounts-js_
 
 ## Install
 

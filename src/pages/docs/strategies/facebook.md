@@ -7,7 +7,7 @@ title: "Facebook"
 [Github](https://github.com/accounts-js/accounts/tree/master/packages/oauth-facebook) |
 [npm](https://www.npmjs.com/package/@accounts/oauth-facebook)
 
-_OAuth Facebook Strategy for js-accounts_
+_OAuth Facebook Strategy for accounts-js_
 
 ## Install
 

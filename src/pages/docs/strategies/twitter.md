@@ -7,7 +7,7 @@ title: "Twitter"
 [Github](https://github.com/accounts-js/accounts/tree/master/packages/oauth-twitter) |
 [npm](https://www.npmjs.com/package/@accounts/oauth-twitter)
 
-_OAuth Twitter Strategy for js-accounts_
+_OAuth Twitter Strategy for accounts-js_
 
 ## Install
 
