@@ -3222,9 +3222,9 @@ gatsby-1-config-css-modules@^1.0.8:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-cli@^1.1.29:
-  version "1.1.29"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.29.tgz#590f766ca61591e69a7793660b767257b896d6fe"
+gatsby-cli@^1.1.31:
+  version "1.1.31"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.31.tgz#31534dd5a6df0dff5fe9dcb39de0bd072c318290"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -3298,17 +3298,17 @@ gatsby-plugin-styled-components@2.0.5:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-typescript@1.4.13:
-  version "1.4.13"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-1.4.13.tgz#4d15b93f752955c02b09759a2eaeb304d64e798d"
+gatsby-plugin-typescript@1.4.15:
+  version "1.4.15"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-1.4.15.tgz#7b5f3768d43178170126589306992c167782baeb"
   dependencies:
     babel-runtime "^6.26.0"
     ts-loader "^2.0.3"
     typescript "^2.2.1"
 
-gatsby-plugin-typography@1.7.11:
-  version "1.7.11"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.11.tgz#1dca9dddf890d9f41fc14f64e1cdfedfd064ed21"
+gatsby-plugin-typography@1.7.12:
+  version "1.7.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.12.tgz#1bcb612aa6ee81b176fadebef55e36801797a235"
   dependencies:
     babel-runtime "^6.26.0"
     react-typography "^0.16.1"
@@ -3340,9 +3340,9 @@ gatsby-remark-prismjs@1.2.12:
     prismjs "^1.7.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@1.5.14:
-  version "1.5.14"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.14.tgz#2d016615ca03e32f1ec0e453d4c7e87fd7966f15"
+gatsby-source-filesystem@1.5.15:
+  version "1.5.15"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.15.tgz#26278e00101f03c279f4f0bdd285420ff561e8b2"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -3380,9 +3380,9 @@ gatsby-transformer-remark@1.7.29:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@1.9.166:
-  version "1.9.166"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.166.tgz#556e7c3450b7cbb674ca03c776eda598d073d493"
+gatsby@1.9.169:
+  version "1.9.169"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.169.tgz#4070a4773157c5dbbe14ba2a34e8206cf4247950"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -3422,7 +3422,7 @@ gatsby@1.9.166:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
-    gatsby-cli "^1.1.29"
+    gatsby-cli "^1.1.31"
     gatsby-link "^1.6.34"
     gatsby-module-loader "^1.0.9"
     gatsby-react-router-scroll "^1.0.8"
@@ -3479,6 +3479,7 @@ gatsby@1.9.166:
     style-loader "^0.13.0"
     type-of "^2.0.1"
     url-loader "^0.5.7"
+    uuid "^3.1.0"
     v8-compile-cache "^1.1.0"
     webpack "^1.13.3"
     webpack-configurator "^0.3.0"
