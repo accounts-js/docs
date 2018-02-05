@@ -9,7 +9,7 @@
     tslint-config-prettier "^1.1.0"
     tslint-eslint-rules "^4.1.1"
 
-"@types/history@*":
+"@types/history@*", "@types/history@^4.6.2":
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
 
@@ -3252,9 +3252,9 @@ gatsby-1-config-css-modules@^1.0.8:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-cli@^1.1.32:
-  version "1.1.32"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.32.tgz#5591b343a1ef4c4643a05c85ca711043dcd487c7"
+gatsby-cli@^1.1.34:
+  version "1.1.34"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.34.tgz#85c17bf67bc717be0274c8e4a56c7df819ede1f5"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -3274,10 +3274,11 @@ gatsby-cli@^1.1.32:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-link@1.6.35, gatsby-link@^1.6.35:
-  version "1.6.35"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.35.tgz#28ade7aa44460d0a3102d45e4f7413ff7a633e47"
+gatsby-link@1.6.36, gatsby-link@^1.6.36:
+  version "1.6.36"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.36.tgz#3f969d38e9396e2650d3804543c76881eab98feb"
   dependencies:
+    "@types/history" "^4.6.2"
     "@types/react-router-dom" "^4.2.2"
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
@@ -3337,17 +3338,17 @@ gatsby-plugin-typescript@1.4.15:
     ts-loader "^2.0.3"
     typescript "^2.2.1"
 
-gatsby-plugin-typography@1.7.12:
-  version "1.7.12"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.12.tgz#1bcb612aa6ee81b176fadebef55e36801797a235"
+gatsby-plugin-typography@1.7.13:
+  version "1.7.13"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.13.tgz#c653c1697f48327a33f15cc5fda87ee06384063b"
   dependencies:
     babel-runtime "^6.26.0"
     react-typography "^0.16.1"
     typography "^0.16.0"
 
-gatsby-react-router-scroll@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.8.tgz#6cc9d80c139e58ed5189dd35146ac37b46846cd5"
+gatsby-react-router-scroll@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.9.tgz#0a321e7ae8c69ac6ba9528abf5b7be4e549a943f"
   dependencies:
     babel-runtime "^6.26.0"
     scroll-behavior "^0.9.1"
@@ -3371,9 +3372,9 @@ gatsby-remark-prismjs@1.2.12:
     prismjs "^1.7.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@1.5.15:
-  version "1.5.15"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.15.tgz#26278e00101f03c279f4f0bdd285420ff561e8b2"
+gatsby-source-filesystem@1.5.16:
+  version "1.5.16"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.16.tgz#1439093b6ad53322667870ca4ed636ad0e2121b0"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -3412,9 +3413,9 @@ gatsby-transformer-remark@1.7.30:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@1.9.172:
-  version "1.9.172"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.172.tgz#2d3719b85fcce392415a654e7bdad1369d12726b"
+gatsby@1.9.178:
+  version "1.9.178"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.178.tgz#56601badc81d527fef7a6d25d87e9d7ff44e52e9"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -3454,10 +3455,10 @@ gatsby@1.9.172:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
-    gatsby-cli "^1.1.32"
-    gatsby-link "^1.6.35"
+    gatsby-cli "^1.1.34"
+    gatsby-link "^1.6.36"
     gatsby-module-loader "^1.0.9"
-    gatsby-react-router-scroll "^1.0.8"
+    gatsby-react-router-scroll "^1.0.9"
     glob "^7.1.1"
     graphql "^0.11.7"
     graphql-relay "^0.5.1"
@@ -3502,6 +3503,7 @@ gatsby@1.9.172:
     relay-compiler "^1.4.1"
     remote-redux-devtools "^0.5.7"
     serve "^6.4.0"
+    shallow-compare "^1.2.2"
     sift "^3.2.6"
     signal-exit "^3.0.2"
     slash "^1.0.0"
@@ -7936,6 +7938,10 @@ sha.js@^2.4.0, sha.js@^2.4.8:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
+
+shallow-compare@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/shallow-compare/-/shallow-compare-1.2.2.tgz#fa4794627bf455a47c4f56881d8a6132d581ffdb"
 
 shallowequal@^1.0.1:
   version "1.0.2"
