@@ -3342,9 +3342,9 @@ gatsby-plugin-typescript@1.4.16:
     ts-loader "^2.0.3"
     typescript "^2.2.1"
 
-gatsby-plugin-typography@1.7.14:
-  version "1.7.14"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.14.tgz#911baf7e5b5db1478f4aca7a50ad57622a32560a"
+gatsby-plugin-typography@1.7.15:
+  version "1.7.15"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.15.tgz#4e09bd78a2b52974505a19caaa906364a70f842c"
   dependencies:
     babel-runtime "^6.26.0"
     react-typography "^0.16.1"
