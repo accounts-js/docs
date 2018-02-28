@@ -24,7 +24,7 @@
     "@accounts/tslint-config-accounts": "0.0.6",
     "@types/react": "16.0.38",
     "@types/react-dom": "16.0.4",
-    "gatsby": "1.9.218",
+    "gatsby": "1.9.219",
     "gatsby-plugin-react-helmet": "2.0.5",
     "gatsby-plugin-react-next": "1.0.9",
     "gatsby-plugin-sass": "1.0.17",
