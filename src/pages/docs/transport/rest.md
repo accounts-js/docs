@@ -35,7 +35,7 @@ app.use(accountsExpress(accountsServer));
 app.listen(3000);
 ```
 
-## Options
+### Options
 
 ```javascript
 const options = {
@@ -44,4 +44,35 @@ const options = {
 };
 
 app.use(accountsExpress(accountsServer, accountsExpressOptions));
+```
+
+## Client
+
+### Install
+
+```
+yarn add @accounts/rest-client
+```
+
+### Usage
+
+```javascript
+import { AccountsClient } from '@accounts/client';
+import { RestClient } from '@accounts/rest-client';
+
+const accountsRest = new RestClient({
+  apiHost: 'http://localhost:4000',
+  rootPath: '/accounts',
+});
+const accounts = new AccountsClient({}, accountsRest);
+```
+
+### Options
+
+```javascript
+const options = {
+  apiHost: string,
+  // Path that prefix the accounts-js routes
+  rootPath: string,
+};
 ```
