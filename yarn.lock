@@ -3367,9 +3367,9 @@ gatsby-remark-autolink-headers@1.4.13:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-prismjs@1.2.16:
-  version "1.2.16"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.16.tgz#02d3c6a0cf6ebdaae93aef9a28bede5eaee5d268"
+gatsby-remark-prismjs@1.2.17:
+  version "1.2.17"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.17.tgz#86ab9dccd6f0952182c4d36cb9290effee6d5dee"
   dependencies:
     babel-runtime "^6.26.0"
     parse-numeric-range "0.0.2"
