@@ -3345,9 +3345,9 @@ gatsby-plugin-sass@1.0.20:
     sass-loader "^4.1.1"
     webpack "^1.13.3"
 
-gatsby-plugin-sitemap@1.2.15:
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-1.2.15.tgz#3d74ec1477208c6f340d7d705d41cdacea2e7f23"
+gatsby-plugin-sitemap@1.2.16:
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-1.2.16.tgz#0a9fcc9d06d4a9467536d9b9532b502b328b622f"
   dependencies:
     babel-runtime "^6.26.0"
     sitemap "^1.12.0"
