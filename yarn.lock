@@ -3388,9 +3388,9 @@ gatsby-module-loader@^1.0.11:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
-gatsby-plugin-react-helmet@2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-2.0.7.tgz#f2d7836147f28cd3d3a7eae82b5ac6978c4c5e34"
+gatsby-plugin-react-helmet@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-2.0.8.tgz#26928bfd38f6828f479d76393839523ddf85b005"
   dependencies:
     babel-runtime "^6.26.0"
 
@@ -3414,9 +3414,9 @@ gatsby-plugin-sass@1.0.21:
     sass-loader "^4.1.1"
     webpack "^1.13.3"
 
-gatsby-plugin-sitemap@1.2.17:
-  version "1.2.17"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-1.2.17.tgz#21f27d9be95554288ba9b6e0c3f684a26c3f68ba"
+gatsby-plugin-sitemap@1.2.18:
+  version "1.2.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-1.2.18.tgz#6e5f0e64a95fd79fbdf6183f4c34587e6b42d07e"
   dependencies:
     babel-runtime "^6.26.0"
     sitemap "^1.12.0"
