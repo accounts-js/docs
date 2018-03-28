@@ -35,7 +35,7 @@
     "gatsby-remark-autolink-headers": "1.4.13",
     "gatsby-remark-prismjs": "1.2.21",
     "gatsby-source-filesystem": "1.5.27",
-    "gatsby-transformer-remark": "1.7.38",
+    "gatsby-transformer-remark": "1.7.39",
     "gh-pages": "1.1.0",
     "prettier": "1.11.1",
     "tslint": "5.9.1",
