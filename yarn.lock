@@ -79,9 +79,9 @@
   version "16.0.20"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.20.tgz#dc16feb9c0bdf50e439482c6fd3c43d5a1d9f3b1"
 
-"@types/react@16.3.1":
-  version "16.3.1"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.1.tgz#6f6aaffaf7dba502ff5ca15e4aa18caee9b04995"
+"@types/react@16.3.2":
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.2.tgz#8dd45796b33160c60ddf1de068f45729214668bb"
 
 "@types/tmp@^0.0.32":
   version "0.0.32"
