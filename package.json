@@ -32,7 +32,7 @@
     "gatsby-plugin-styled-components": "2.0.11",
     "gatsby-plugin-typescript": "1.4.19",
     "gatsby-plugin-typography": "1.7.18",
-    "gatsby-remark-autolink-headers": "1.4.15",
+    "gatsby-remark-autolink-headers": "1.4.16",
     "gatsby-remark-prismjs": "1.2.23",
     "gatsby-source-filesystem": "1.5.28",
     "gatsby-transformer-remark": "1.7.39",
