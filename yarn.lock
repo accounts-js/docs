@@ -3449,9 +3449,9 @@ gatsby-remark-autolink-headers@1.4.16:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-prismjs@1.2.23:
-  version "1.2.23"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.23.tgz#49cd63f5b0977bf8ead13649d26f6f2d03c48fe8"
+gatsby-remark-prismjs@1.2.24:
+  version "1.2.24"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.24.tgz#b2cc4e9c4e71c08d89a32fd847244f927f4a7b79"
   dependencies:
     babel-runtime "^6.26.0"
     parse-numeric-range "0.0.2"
@@ -3499,9 +3499,9 @@ gatsby-transformer-remark@1.7.39:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@1.9.246:
-  version "1.9.246"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.246.tgz#0e6c66ce1de88d8369480b57f737c7c88d351bc7"
+gatsby@1.9.247:
+  version "1.9.247"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.247.tgz#e5d52c88c8bc23e5f0fc137946a8f5ec4f967923"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
