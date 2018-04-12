@@ -37,7 +37,7 @@
     "gatsby-source-filesystem": "1.5.29",
     "gatsby-transformer-remark": "1.7.39",
     "gh-pages": "1.1.0",
-    "prettier": "1.11.1",
+    "prettier": "1.12.0",
     "tslint": "5.9.1",
     "typescript": "2.8.1"
   },
