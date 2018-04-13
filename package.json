@@ -42,7 +42,7 @@
     "typescript": "2.8.1"
   },
   "dependencies": {
-    "bulma": "0.6.2",
+    "bulma": "0.7.0",
     "gatsby-link": "1.6.40",
     "react": "16.3.1",
     "react-dom": "16.3.1",
