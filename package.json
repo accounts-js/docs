@@ -34,7 +34,7 @@
     "gatsby-plugin-typography": "1.7.18",
     "gatsby-remark-autolink-headers": "1.4.16",
     "gatsby-remark-prismjs": "1.2.24",
-    "gatsby-source-filesystem": "1.5.31",
+    "gatsby-source-filesystem": "1.5.32",
     "gatsby-transformer-remark": "1.7.40",
     "gh-pages": "1.1.0",
     "prettier": "1.12.0",
