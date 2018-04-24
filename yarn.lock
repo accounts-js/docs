@@ -8905,7 +8905,19 @@ typography-theme-doelger@0.15.11:
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.15.10"
 
-typography@0.16.6, typography@^0.16.0:
+typography@0.16.16:
+  version "0.16.16"
+  resolved "https://registry.yarnpkg.com/typography/-/typography-0.16.16.tgz#e1b74aa60070b5eb0c16db7da662cc359d66b803"
+  dependencies:
+    compass-vertical-rhythm "^1.3.0"
+    decamelize "^1.2.0"
+    gray-percentage "^2.0.0"
+    lodash "^4.13.1"
+    modularscale "^1.0.2"
+    object-assign "^4.1.0"
+    typography-normalize "^0.14.0"
+
+typography@^0.16.0:
   version "0.16.6"
   resolved "https://registry.yarnpkg.com/typography/-/typography-0.16.6.tgz#8eeb6a3f10a97fd08025132bb50272104ae72aa3"
   dependencies:
