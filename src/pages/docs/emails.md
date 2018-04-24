@@ -4,27 +4,22 @@ title: "Emails"
 
 # Emails
 
-Configuration:
+* [Configuration](#configuration)
+* [Overwrite the email templates](#overwrite-the-email-templates)
+* [Example using emailjs](#example-using-emailjs)
+
+> By default accounts-js will print the emails json in the console.
+
+## Configuration
 
 ```javascript
 const options = {
-  // A valid email config object passed to emailjs
-  email: // See https://github.com/eleith/emailjs#example-usage---text-only-emails
-  // You can handle the send of the emails by providing an optional sendMail function
-  sendMail: ({ from, to, text, html }): Promise<void>
+  // You can handle sending the emails by providing an optional sendMail function
+  sendMail: ({ from, subject, to, text, html }): Promise<void>
 };
-
-// Example
-const options = {
-  email: {
-    host: process.env.SMTP_HOST,
-    user: process.env.SMTP_USER,
-    password: process.env.SMTP_PASSWORD,
-  },
-};
-
-const accountsServer = new AccountsServer(options);
 ```
+
+## Overwrite the email templates
 
 To overwrite the email templates:
 
@@ -38,6 +33,39 @@ const options = {
     },
     resetPassword: // Same as verifyEmail
     enrollAccount: // Same as verifyEmail
+  },
+};
+
+const accountsServer = new AccountsServer(options);
+```
+
+## Example using [emailjs](https://github.com/eleith/emailjs)
+
+```javascript
+import emailjs from 'emailjs';
+
+// inititate emailjs
+const server = email.server.connect({ ...myOptions });
+
+const options = {
+  sendMail: ({ from, subject, to, text, html }) => {
+    return new Promise((resolve, reject) => {
+      server.send(
+        {
+          text,
+          from,
+          to,
+          subject,
+        },
+        err => {
+          if (err) {
+            reject(err);
+            return;
+          }
+          resolve();
+        }
+      );
+    });
   },
 };
 
