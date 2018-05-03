@@ -79,6 +79,11 @@ export default ({ data, pathContext }) => {
                   Emails
                 </StyledLink>
               </ListItem>
+              <ListItem>
+                <StyledLink to="/docs/hooks/" activeClassName="active">
+                  Hooks
+                </StyledLink>
+              </ListItem>
               <ListItem className="title is-6">Strategies</ListItem>
               <ListItem>
                 <StyledLink
