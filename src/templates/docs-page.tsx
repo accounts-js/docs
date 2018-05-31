@@ -95,18 +95,10 @@ export default ({ data, pathContext }) => {
               </ListItem>
               <ListItem>
                 <StyledLink
-                  to="/docs/strategies/facebook/"
+                  to="/docs/strategies/oauth/"
                   activeClassName="active"
                 >
-                  Facebook
-                </StyledLink>
-              </ListItem>
-              <ListItem>
-                <StyledLink
-                  to="/docs/strategies/twitter/"
-                  activeClassName="active"
-                >
-                  Twitter
+                  Oauth
                 </StyledLink>
               </ListItem>
               <ListItem className="title is-6">Transport</ListItem>
@@ -147,6 +139,11 @@ export default ({ data, pathContext }) => {
                   activeClassName="active"
                 >
                   Meteor
+                </StyledLink>
+              </ListItem>
+              <ListItem>
+                <StyledLink to="/docs/cookbook/react/" activeClassName="active">
+                  React
                 </StyledLink>
               </ListItem>
             </List>
