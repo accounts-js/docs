@@ -10,16 +10,16 @@ title: "Hooks"
 
 The following hooks are available:
 
-* `ServerHooks.LoginSuccess`
-* `ServerHooks.LoginError`
-* `ServerHooks.ImpersonationSuccess`
-* `ServerHooks.ImpersonationError`
-* `ServerHooks.RefreshTokensSuccess`
-* `ServerHooks.RefreshTokensError`
-* `ServerHooks.LogoutSuccess`
-* `ServerHooks.LogoutError`
-* `ServerHooks.ResumeSessionSuccess`
-* `ServerHooks.ResumeSessionError`
+- `ServerHooks.LoginSuccess`
+- `ServerHooks.LoginError`
+- `ServerHooks.ImpersonationSuccess`
+- `ServerHooks.ImpersonationError`
+- `ServerHooks.RefreshTokensSuccess`
+- `ServerHooks.RefreshTokensError`
+- `ServerHooks.LogoutSuccess`
+- `ServerHooks.LogoutError`
+- `ServerHooks.ResumeSessionSuccess`
+- `ServerHooks.ResumeSessionError`
 
 > You can subscribe to each hook multiple time!
 

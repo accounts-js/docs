@@ -17,11 +17,11 @@ framework had a plug and play approach for its monolithic framework that saved a
 ton of work that is traditionally done by any development team, over and over
 again. Meteor's accounts system had a couple of restrictions:
 
-* First it was published in Meteor's "atmosphere" package repository and was
+- First it was published in Meteor's "atmosphere" package repository and was
   dependent on the Meteor's build tool.
-* Second, Meteor is built around DDP and so its accounts system was taking that
+- Second, Meteor is built around DDP and so its accounts system was taking that
   for granted.
-* Third, Meteor's dependency on MongoDB meant that the business logic was
+- Third, Meteor's dependency on MongoDB meant that the business logic was
   dependant on how the data is stored in the database.
 
 ## FAQ

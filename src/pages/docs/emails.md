@@ -4,9 +4,9 @@ title: "Emails"
 
 # Emails
 
-* [Configuration](#configuration)
-* [Overwrite the email templates](#overwrite-the-email-templates)
-* [Example using emailjs](#example-using-emailjs)
+- [Configuration](#configuration)
+- [Overwrite the email templates](#overwrite-the-email-templates)
+- [Example using emailjs](#example-using-emailjs)
 
 > By default accounts-js will print the emails json in the console.
 
