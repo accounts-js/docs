@@ -11,8 +11,13 @@ const ExamplesPage = () => (
         <p>Examples on how to use the @js-accounts packages:</p>
         <ul>
           <li>
-            <a href="https://github.com/js-accounts/examples/tree/master/rest-express">
-              Rest + expressjs + mongodb
+            <a href="https://github.com/accounts-js/examples/tree/master/rest-express-typescript">
+              Rest + Expressjs + Mongodb
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/accounts-js/examples/tree/master/react-typescript">
+              React + Rest
             </a>
           </li>
         </ul>

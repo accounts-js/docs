@@ -4,6 +4,9 @@ title: "Meteor"
 
 # Meteor
 
+Coming soon ...
+
+<!--
 _accounts-js adapter for MeteorJS: override and extends Meteor methods and
 publication with accounts-js authentication._
 
@@ -75,3 +78,4 @@ Note that if there method is called without an authenticated use in the client
 side, the `user` and `userId` will return `null` values - so you should check it
 inside your method. If the user specified a token but it's not valid - the
 method/pulication will fail with the accounts-js error.
+-->
