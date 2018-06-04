@@ -45,7 +45,7 @@
   "dependencies": {
     "bulma": "0.7.1",
     "gatsby-link": "1.6.44",
-    "prismjs": "^1.14.0",
+    "prismjs": "1.14.0",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "react-helmet": "5.2.0",
