@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@accounts/tslint-config-accounts": "0.0.9",
-    "@types/react": "16.3.17",
+    "@types/react": "16.3.18",
     "@types/react-dom": "16.0.6",
     "gatsby": "1.9.262",
     "gatsby-plugin-react-helmet": "2.0.11",
