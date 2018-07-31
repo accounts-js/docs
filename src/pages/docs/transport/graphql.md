@@ -117,7 +117,6 @@ app.use(
 );
 ```
 
-
 ## Authenticating Resolvers
 
 You can authenticate your own resolvers with `JSAccounts` authentication flow, by using `authenticated` method from this package.
@@ -132,10 +131,13 @@ import { authenticated } from '@accounts/graphql-api';
 
 export const resolver = {
   Mutation: {
-    updateUserProfile: authenticated(AccountsServer, (rootValue, args, context) => {
-      // Write your resolver here
-      // context.user - the current authenticated user!
-    }),
+    updateUserProfile: authenticated(
+      AccountsServer,
+      (rootValue, args, context) => {
+        // Write your resolver here
+        // context.user - the current authenticated user!
+      }
+    ),
   },
 };
 ```
@@ -234,7 +236,7 @@ const accountsGraphQL = new GraphQLClient({
 });
 ```
 
-## Using with Apollo Link 
+## Using with Apollo Link
 
 In order to send the accounts token on every request sent to your GraphQL server, apollo requires you to implment an apollo-link. This link is usually quite generic when using accounts-js so we've implmeneted the apollo-link you need and offer it as a utility package.
 
