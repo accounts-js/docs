@@ -4,7 +4,11 @@ title: "Meteor"
 
 # Meteor
 
-Coming soon ...
+An `accounts-js` adapter for using inside MeteorJS is planned. 
+
+If you're moving off of MeteorJS to Apollo and want to keep your `meteor/accounts-password` users collection, use this `accounts-js` wrapper:
+
+[github.com/flyblackbird/apollo-accounts](https://github.com/flyblackbird/apollo-accounts)
 
 <!--
 _accounts-js adapter for MeteorJS: override and extends Meteor methods and
