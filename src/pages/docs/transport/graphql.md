@@ -230,7 +230,7 @@ const apolloClient = new ApolloClient({
   // apollo options
 });
 
-const accountsGraphQL = new GraphQLClient({
+const accountsGraphQL = new AccountsGraphQLClient({
   graphQLClient: apolloClient,
   // other options
 });
