@@ -39,7 +39,7 @@ const db = mongoose.connection
 
 const password = new AccountsPassword()
 
-const accountsServer = new AccountsServer({
+const accountsServer = new AccountsServer(
   {
     db: new MongoDBInterface(db),
     tokenSecret: 'SECRET',
@@ -47,7 +47,7 @@ const accountsServer = new AccountsServer({
   {
     password,
   }
-});
+);
 ```
 
 Next, import `createAccountsGraphQL` method from this package, and run it with your `AccountsServer`:
