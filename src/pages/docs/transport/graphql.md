@@ -252,9 +252,9 @@ yarn add @accounts/apollo-link @accounts/client
 import { accountsLink } from '@accounts/apollo-link';
 import { AccountsClient } from '@accounts/client';
 
-const accountsClient = new AccountsClient( AccountsClient({
+const accountsClient = new AccountsClient({
   // options
-}, 'graphql'));
+}, 'graphql');
 const authLink = accountsLink(accountsClient);
 
 export const apolloClient = new ApolloClient({
