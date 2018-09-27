@@ -254,7 +254,7 @@ import { AccountsClient } from '@accounts/client';
 
 const accountsClient = new AccountsClient( AccountsClient({
   // options
-}, 'graphql'); );
+}, 'graphql'));
 const authLink = accountsLink(accountsClient);
 
 export const apolloClient = new ApolloClient({
