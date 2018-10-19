@@ -1,3 +1,5 @@
+**Note: Docs have been moved to https://github.com/accounts-js/accounts/**
+
 # Docs
 
 _Docs for accounts-js_
